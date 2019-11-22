@@ -1,6 +1,10 @@
 # Penentuan-Knot-Optimal-dalam-Regresi-Non-Parametrik-Deret-Fourier-dengan-Metode-CV-dan-UBR.txt
+#Algoritma ini sudah Mempunyai Hak Paten yang diterbitkan Kementerian Hukum dan HAM 
+Direktorat Jenderal Kekayaan Intelektual dengan Nomor Pencatatan 000163525
+atas Nama Siti Hariksa Amalia dan Indah Manfaati Nur.
 #Algoritma yang saya tulis disini bisa dijalankan dengan Software R atau R Studio.
-#Algoritma yang saya tuliskan disini hanya program untuk mendapatkan nilai Cross Validation (CV) dan Unibiased Risk (UBR), untuk program lengkapnya silahkan hubungi saya di Email:sitihariksaamalia@gmail.com.
+#Algoritma yang saya tuliskan disini hanya program untuk mendapatkan nilai Cross Validation (CV) dan Unibiased Risk (UBR), 
+ untuk program lengkapnya silahkan hubungi saya di Email:sitihariksaamalia@gmail.com.
 1. Cross Validation(CV)
  I<-diag(1,m,m)
  theta<-rep(0,N) 
