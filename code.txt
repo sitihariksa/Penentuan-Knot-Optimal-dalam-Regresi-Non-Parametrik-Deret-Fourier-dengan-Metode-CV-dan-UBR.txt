@@ -1,0 +1,32 @@
+# Penentuan-Knot-Optimal-dalam-Regresi-Non-Parametrik-Deret-Fourier-dengan-Metode-CV-dan-UBR.txt
+#Algoritma yang saya tulis disini bisa dijalankan dengan Software R atau R Studio.
+#Algoritma yang saya tuliskan disini hanya program untuk mendapatkan nilai Cross Validation (CV) dan Unibiased Risk (UBR), untuk program lengkapnya silahkan hubungi saya di Email:sitihariksaamalia@gmail.com.
+1. Cross Validation(CV)
+ I<-diag(1,m,m)
+ theta<-rep(0,N) 
+ theta<-MPL(t(A)%*%A)%*%t(A)%*%y 
+ Nonpar<-A%*%MPL(t(A)%*%A)%*%t(A) 
+ ytopi<-rep(0,m) 
+ ytopi<-Nonpar%*%y 
+ df<-sum(diag(Nonpar)) 
+ D<-(1/m) W<-(1/m)*I 
+ cv<-D%*%sum((y-ytopi)/((rep(1,nrow(Nonpar)))-diag(Nonpar)))^2 
+2. Unbiased Risk(UBR)
+ I<-diag(1,m,m)   
+ F<-diag(m)   
+ theta<-rep(0,N)   
+ theta<-MPL(t(A)%*%A)%*%t(A)%*%y   
+ Nonpar<-A%*%MPL(t(A)%*%A)%*%t(A)    
+ A1<-F-Nonpar  
+ ytopi<-rep(0,m)  
+ ytopi<-Nonpar%*%y      
+ W<-A1%*%ytopi  
+ Z<-sum(W^2)  
+ U1<-sqrt(Z)   
+ L<-sum(diag(A1))   
+ sigmaU<-U1/L   
+ P<-sum(diag(A1^2))   
+ U3<-(sigmaU%*%P)/m   
+ Q<-sum(diag(Nonpar^2))   
+ U4<-(sigmaU%*%Q)/m  
+ UBR<-(U1+U3+U4)/m
